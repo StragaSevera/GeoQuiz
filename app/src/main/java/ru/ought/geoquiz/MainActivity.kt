@@ -4,24 +4,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import ru.ought.geoquiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: MainActivityBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = MainActivityBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.trueButton.setOnClickListener(this::onClickTrue)
-        binding.falseButton.setOnClickListener(this::onClickFalse)
+        binding.trueButton.setOnClickListener { onClickTrue() }
+        binding.falseButton.setOnClickListener { onClickFalse() }
     }
 
-    private fun onClickTrue(view: View?) {
+    private fun onClickTrue() {
         makeToast(R.string.correct_toast)
     }
 
-    private fun onClickFalse(view: View?) {
+    private fun onClickFalse() {
         makeToast(R.string.incorrect_toast)
     }
 
