@@ -2,20 +2,19 @@ package ru.ought.geoquiz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import ru.ought.geoquiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var b: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        b = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(b.root)
 
-        binding.trueButton.setOnClickListener { onClickTrue() }
-        binding.falseButton.setOnClickListener { onClickFalse() }
+        b.trueButton.setOnClickListener { onClickTrue() }
+        b.falseButton.setOnClickListener { onClickFalse() }
     }
 
     private fun onClickTrue() {
